@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5A5F869-A053-4D67-B1D7-3082F0587CE8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2.html" />
+    <Content Include="4.html" />
+    <Content Include="5.html" />
+    <Content Include="588a6507d06f6719692a2d15.png" />
+    <Content Include="6.html" />
+    <Content Include="b\photo_2023-07-29_23-54-18.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-19.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-20.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-21 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-21.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-22.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-23.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-25.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-26.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-27.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-28.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-30.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-31.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-32.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-33.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-34.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-35.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-36.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-38.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-40.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-41.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-42.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-43.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-45.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-46 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-46.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-47 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-47.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-48 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-48.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-49 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-49.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-51 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-51.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-52 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-52.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-53 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-53.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-54 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-54.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-55 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-55.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-56 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-56.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-57 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-57.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-59 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-54-59.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-00 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-00.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-01 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-01.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-02 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-02.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-04.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-05.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-06.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-07.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-08.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-10.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-11.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-12.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-13.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-16.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-18.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-20.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-21.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-23 %282%29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-23.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-24.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-26.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-27.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-29.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-30.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-31.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-32.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-33.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-35.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-36.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-38.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-39.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-40.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-41.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-42.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-44.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-45.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-46.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-47.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-49.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-50.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-53.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-54.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-56.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-57.jpg" />
+    <Content Include="b\photo_2023-07-29_23-55-59.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-00.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-01.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-03.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-04.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-06.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-07.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-08.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-09.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-10.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-12.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-13.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-14.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-15.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-17.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-18.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-19.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-20.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-21.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-23.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-25.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-28.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-30.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-33.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-35.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-37.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-40.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-43.jpg" />
+    <Content Include="b\photo_2023-07-29_23-56-45.jpg" />
+    <Content Include="c\photo_2023-07-30_00-02-59.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-00.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-01.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-04.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-06.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-07.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-08.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-10.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-11.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-12.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-14.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-15.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-16.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-18.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-19.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-20.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-21.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-22.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-23.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-25.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-26.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-27.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-28.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-30.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-31.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-32.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-34.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-35.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-37.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-38.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-40.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-41.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-43.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-44.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-45.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-46.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-47.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-49.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-50.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-51.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-52.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-53.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-55.jpg" />
+    <Content Include="c\photo_2023-07-30_00-03-56.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-02.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-03.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-04.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-05.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-07.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-08.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-09.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-10.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-11.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-12.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-14.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-15.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-16.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-17.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-19.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-20.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-21.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-23.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-24.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-26.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-27.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-28.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-30.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-32.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-33.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-35.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-36.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-37.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-38.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-39.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-40.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-41.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-42.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-43.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-45.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-46.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-47.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-48.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-50 %282%29.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-50.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-52.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-53.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-54.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-55.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-56.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-57.jpg" />
+    <Content Include="c\photo_2023-07-30_00-04-58.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-00.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-01.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-02.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-03.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-04.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-05.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-07.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-08.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-09.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-11.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-12.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-13.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-14.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-16.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-17.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-18.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-19.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-20.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-22.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-23.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-25 %282%29.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-25.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-27.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-28.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-29.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-31.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-32.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-33.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-35.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-36.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-37.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-39.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-40.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-41.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-43.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-44.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-45.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-46.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-48 %282%29.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-48.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-50.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-51.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-52.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-54.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-55.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-56.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-57.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-58.jpg" />
+    <Content Include="c\photo_2023-07-30_00-05-59.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-01.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-02.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-03.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-04.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-05.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-06.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-08.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-09.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-10.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-11.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-13.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-14.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-16 %282%29.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-16.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-18.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-20.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-22.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-23.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-24.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-26.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-27.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-28.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-29.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-30.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-32.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-35.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-36.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-39.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-41.jpg" />
+    <Content Include="c\photo_2023-07-30_00-06-43.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-00.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-02.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-03.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-04.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-05.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-07.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-08.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-09.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-10.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-11.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-12.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-13.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-14.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-16.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-17.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-18.jpg" />
+    <Content Include="c\photo_2023-07-30_00-07-19.jpg" />
+    <Content Include="d\photo_2023-07-30_00-11-59.jpg" />
+    <Content Include="d\photo_2023-07-30_00-12-00.jpg" />
+    <Content Include="d\photo_2023-07-30_00-12-01.jpg" />
+    <Content Include="d\photo_2023-07-30_00-12-04.jpg" />
+    <Content Include="d\photo_2023-07-30_00-12-06.jpg" />
+    <Content Include="d\photo_2023-07-30_00-12-08.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-10.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-12.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-13.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-15.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-16.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-18.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-21.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-23.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-27.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-30.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-33.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-35.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-39.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-40.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-42.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-45.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-49.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-52.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-55.jpg" />
+    <Content Include="e\photo_2023-07-30_00-15-59.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-02.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-05.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-07.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-08.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-10.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-11.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-13.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-15.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-17.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-18.jpg" />
+    <Content Include="e\photo_2023-07-30_00-16-19.jpg" />
+    <Content Include="f\photo_2023-07-30_00-18-45.jpg" />
+    <Content Include="f\photo_2023-07-30_00-18-46.jpg" />
+    <Content Include="f\photo_2023-07-30_00-21-17.jpg" />
+    <Content Include="f\photo_2023-07-30_00-21-19.jpg" />
+    <Content Include="7.html" />
+    <Content Include="g\photo_2023-07-30_00-25-48.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-49.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-50.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-51.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-52.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-53.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-54.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-55.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-56.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-57.jpg" />
+    <Content Include="g\photo_2023-07-30_00-25-58.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-00.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-01.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-03.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-04.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-05.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-07.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-08.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-09.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-10.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-11.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-12.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-13.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-14.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-15.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-16.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-18.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-20.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-21.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-22.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-23.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-24.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-25.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-26.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-29.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-33 %282%29.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-33.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-36 %282%29.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-36.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-39.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-42.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-44.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-46.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-48 %282%29.jpg" />
+    <Content Include="g\photo_2023-07-30_00-26-48.jpg" />
+    <Content Include="g\photo_2023-07-30_01-18-18.jpg" />
+    <Content Include="g\photo_2023-07-30_01-18-36.jpg" />
+    <Content Include="g\photo_2023-07-30_01-18-37.jpg" />
+    <Content Include="g\photo_2023-07-30_01-18-38.jpg" />
+    <Content Include="g\photo_2023-07-30_01-18-39.jpg" />
+    <Content Include="g\photo_2023-07-30_01-18-40.jpg" />
+    <Content Include="HtmlPage2.html" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a\photo_2023-07-29_23-54-38.jpg" />
+    <Content Include="a\photo_2023-07-30_00-01-26.jpg" />
+    <Content Include="a\photo_2023-07-30_00-13-55.jpg" />
+    <Content Include="a\photo_2023-07-30_00-24-11.jpg" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="jl\photo_2023-07-30_00-10-19.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-10-20.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-10-24.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-10-28.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-24-16.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-24-30.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-24-32.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-24-34.jpg" />
+    <Content Include="jl\photo_2023-07-30_00-24-52.jpg" />
+    <Content Include="jl\photo_2023-07-30_01-16-38.jpg" />
+    <Content Include="jl\photo_2023-07-30_01-16-57.jpg" />
+    <Content Include="jl\photo_2023-07-30_01-16-58.jpg" />
+    <Content Include="jl\photo_2023-08-05_17-44-14.jpg" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6623</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6623/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
